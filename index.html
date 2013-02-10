@@ -1,5 +1,142 @@
+<!DOCTYPE html>
 <html>
-<body>
-    <h1>Index</h1>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Line George</title>
+
+    <link rel="stylesheet" href="css/george.min.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Galindo' rel='stylesheet' type='text/css'>
+</head>
+<body class="gradient">
+<!-- If you're reading this... please don't just me. :(  -->
+<div id="georgeapp">
+  <div id="content" class="content">
+  </div>
+</div>
+
+<script src="lib/george.min.js"></script>
+
+<!-- Templates -->
+
+<script type="text/template" id="welcome-template">
+	<section id="main" class="gradient">
+	    <div class="wrapper">
+	        <canvas width="570" height="600" id="georgeface"></canvas>  
+	    <h1>Menu Line George</h1>
+	    <div class="description">
+	        <p>Menu Line George is everyone's favorite voice at Christus Schumpert Hospital!</p>
+	        <p>Listen to and rate all of George's recordings.</p>
+	    </div>
+	<a href="#" class="main-button" id="btn-download">Download</a>
+    <a href="#" class="main-button" id="btn-listen"><i class="icon-volume-up"></i> Listen</a>
+	</div>
+	</section>
+	<section id="devices">
+	    <div class="wrapper">
+	        <div class="column" id="iphone">
+	            <h2>App Store</h2> 
+	            <a class="device" id="leftDevice" href="https://itunes.apple.com/us/app/menu-line-george/id440761181"></a>
+	        </div>
+	        <div class="column" id="android">
+	            <h2>Google Play</h2>
+                <a class="device" id="rightDevice" href="#"></a>
+	    </div>
+	    </div>
+	</section>
+	<section id="about" class="gradient">
+	    <div class="wrapper">
+	        <h1>About</h1>
+	        <p>George's daily recordings are enjoyed by thousands of people every day. Unfortunately, they're 
+	gone forever after being overwritten each day. I created this project just for fun as a way of keeping them forever for 
+	everyone to enjoy.</p>
+	        <div id="bio">
+	            <div id="left-column">
+	                <img src="http://www.gravatar.com/avatar/d704ea2a2f1bb79d9719b451505e7b3d?s=140" width="140" height="140" alt="Seth's Picture"/> 
+	            </div>
+	            <div id="right-column">
+	                <h3>Seth Gholson</h3>
+	                <p><a href="http://www.twitter.com/sethgho">@sethgho</a></p>
+	                <p><a href="http://www.sethgholson.com">www.sethgholson.com</a></p>
+	            </div>
+	        </div>
+	    </div>
+	</section> 
+</script>
+
+<script type="text/template" id="fourohfour-template">
+        <div class="fourohfour">
+        </div>
+	<h1 class="label404">Not Found!</h1>
+</script>
+
+<script type="text/template" id="call-list-template">
+    <div class="menu">
+        <div class="toolbar">
+            <button id="btnLogout" class="btn btn-danger btn-mini">Logout</button>
+            <button id="btnNextPage" class="btn btn-primary btn-mini"><i class="icon-arrow-right icon-white"></i></button>
+            <button id="btnPrevPage" class="btn btn-primary btn-mini"><i class="icon-arrow-left icon-white"></i></button>
+        </div>
+    </div>
+<ul id="call-list">
+</div>
+</script>
+
+<script type="text/template" id="toolbar-menu" >
+</script>
+
+<script type="text/template" id="call-template">
+  
+	<div class="callContainer">
+		<a href="<%= '#/view/' + objectId %>" alt="View Call"><h1 class="callLabel"><%= moment(recordingDate.iso).format("M/D") %></h1></a>
+			<div id="georgeButton" class="georgeButton-small <%= isGeorge ? "isGeorgeSmall" : "" %>"></div>
+			
+			<div class="btn-group"> 
+				<a class="btn btn-small dropdown-toggle <%= isApproved ? 'btn-success' : 'btn-warning' %>" data-toggle="dropdown" href="#">
+					<%= isApproved ? "Approved" : "Pending" %>  <span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu">
+					<li><a href="#" class="btnApprove">
+                            <%= isApproved ? "<i class='icon-remove'></i> Reject" : "<i class='icon-ok'></i> Approve" %>
+                    </a></li>
+					<li class="divider"></li>
+					<li><a href="#">Voicemail Fix</a></li>
+			        <li class="btnRestrictAccess"><a href="#">Restrict Access</a></li>
+				</ul>
+			</div>
+
+			<div class="audioplayer">
+			<audio src="<%= file.url %>" type="audio/mp3" controls="controls" preload="none">
+		</div>
+	</div>
+</script>
+
+<script type="text/template" id="call-view-template">
+    <div class="viewerSection">
+        <div class="viewerContent">
+            <div class="lightwrapper">
+                <div class="lights"></div>
+                <div class="georgeBust"></div>
+            </div>
+        <div class="audioplayer">
+            <audio src="<%= file.url %>" type="audio/mp3" controls="controls" preload="none">
+        </div>
+        <h1 class="callLabel"><%= moment(recordingDate.iso).format("MMMM Do YYYY") %></h1>
+</script>
+
+<script type="text/template" id="login-template">
+  <header id="header"></header>
+  <div class="login">
+    <form class="login-form">
+      <h2>Log In</h2>
+      <div class="error" style="display:none"></div>
+      <input type="text" id="login-username" placeholder="Username" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button class="btn">Log In</button>
+    </form>
+  </div>
+</script>
+
 </body>
 </html>
