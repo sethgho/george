@@ -432,7 +432,7 @@ header, footer, nav, section {
     margin-left: 5px;
 }
 
-.menu h1,h2,h3,h4,h5,h6 {
+.managerTitle {
     float: left;
     color: white;
     margin: 8px 0 0 5px;
