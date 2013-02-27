@@ -73,6 +73,7 @@
 
 <script type="text/template" id="call-list-template">
     <div class="menu">
+            <h4>Menu Line George Manager</h4>
         <div class="toolbar">
             <button id="btnLogout" class="btn btn-danger btn-mini">Logout</button>
             <button id="btnNextPage" class="btn btn-primary btn-mini"><i class="icon-arrow-right icon-white"></i></button>
@@ -100,9 +101,11 @@
 					<li><a href="#" class="btnApprove">
                             <%= isApproved ? "<i class='icon-remove'></i> Reject" : "<i class='icon-ok'></i> Approve" %>
                     </a></li>
+                    <li><a href="#" class="btnPush">
+                            <i class="icon-exclamation-sign"></i> Send Push
+                    </a></li>
 					<li class="divider"></li>
-					<li><a href="#">Voicemail Fix</a></li>
-			        <li class="btnRestrictAccess"><a href="#">Restrict Access</a></li>
+                    <li class="btnDownload"><a href="<%= file.url %>">Download</li>
 				</ul>
 			</div>
 
