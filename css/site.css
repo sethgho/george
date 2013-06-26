@@ -100,7 +100,7 @@ section {
 }
 
 #devices .device:hover {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 #leftDevice {
@@ -108,7 +108,7 @@ section {
 }
 
 #rightDevice {
-    background: url("../img/framed_android_dummy.png") no-repeat center center;
+    background: url("../img/android.png") no-repeat center center;
 }
 
 #main canvas{
